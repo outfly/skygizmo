@@ -1,0 +1,30 @@
+/* —————————— Navbar —————————— */
+.navbar {
+  background-color: var(--clr-pri-2);
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: var(--clr-pri-4);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: var(--clr-sec-4);
+  color: black;
+}
+
+/* —————————— Footer —————————— */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--clr-pri-2);
+  color: var(--clr-pri-4);
+  text-align: center;
+  box-shadow: 0 -1px 5px rgba(227, 222, 219, 0.85);
+}

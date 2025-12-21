@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background-color: var(--clr-pri-4);
+  color: var(--clr-pri-2);
+}
+
+main {
+  padding: 1rem;
+}
