@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: var(--clr-pri-4);
   color: var(--clr-pri-2);
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 main {
