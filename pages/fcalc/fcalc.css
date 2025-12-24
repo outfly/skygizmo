@@ -1,0 +1,148 @@
+:root {
+  /* —————————— Colors —————————— */
+  --clr-tl: rgb(52, 68, 102);
+  --clr-fld: rgb(173, 178, 198);
+  --clr-hlgt: rgb(255, 233, 196);
+  --clr-wht: rgb(255, 255, 255);
+  --clr-gry: rgb(191, 191, 191);
+  --clr-blk: rgb(0, 0, 0);
+
+  /* —————————— Borders —————————— */
+  --brd-pri: 1px solid var(--clr-blk);
+  --brd-sec-1: 0.5px solid var(--clr-fld);
+  --brd-sec-2: 0.5px solid var(--clr-wht);
+}
+
+/* —————————— Page —————————— */
+.container {
+  display: flex;
+  flex-direction: column;
+
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fdbk {
+  display: flex;
+  flex-direction: column;
+}
+
+.discr,
+.rcpt {
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--clr-wht);
+  padding: 0.5rem;
+}
+
+.discr {
+  border: 1px solid palegreen;
+}
+
+.rcpt {
+  border: 1px solid gold;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .fdbk {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+
+  .discr,
+  .rcpt {
+    margin-left: 0.5rem;
+    max-width: 20rem;
+  }
+
+  .rcpt {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* empty */
+}
+
+/* —————————— Table —————————— */
+.tbl {
+  border: var(--brd-pri);
+  border-bottom: none;
+}
+
+.r {
+  border-bottom: var(--brd-pri);
+}
+
+.tl {
+  background-color: var(--clr-tl);
+  color: var(--clr-wht);
+}
+
+.fld {
+  background-color: var(--clr-fld);
+  border-bottom: var(--brd-sec-2);
+}
+
+.r > .fld:only-child {
+  border-bottom: none;
+}
+
+.ser {
+  background-color: var(--clr-wht);
+  border-right: var(--brd-sec-1);
+}
+
+.val {
+  background-color: var(--clr-wht);
+}
+
+.tl,
+.fld,
+.ser,
+.val {
+  padding: 0.875rem;
+  align-content: center;
+}
+
+.tl,
+.ser,
+.val {
+  text-align: center;
+}
+
+.nt > :nth-child(2) {
+  border-left: 0.5px solid var(--clr-blk);
+  border-right: 0.5px solid var(--clr-blk);
+  border-left: var(--brd-pri);
+  border-right: var(--brd-pri);
+}
+
+.hlgt {
+  background-color: var(--clr-hlgt);
+}
+
+.unt {
+  padding-top: 1.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  .fld {
+    border-bottom: none;
+  }
+
+  .ser {
+    grid-row: auto;
+    border-left: var(--brd-pri);
+    border-right: var(--brd-pri);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* empty */
+}

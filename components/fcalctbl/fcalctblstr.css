@@ -1,0 +1,42 @@
+/* —————————— Table Structure —————————— */
+.tbl {
+  width: auto;
+}
+
+.r {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 2.75rem auto;
+}
+
+.tl, .nt {
+  grid-column: 1 / -1;
+}
+
+.nt {
+  display: flex;
+}
+
+.nt > div {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.ser {
+  grid-row: 1 / -1;
+}
+
+@media screen and (min-width: 768px) {
+  .r {
+    display: grid;
+    grid-template-columns: 20.5rem 2.75rem 6rem;
+  }
+
+  .ser {
+    grid-row: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* empty */
+}
