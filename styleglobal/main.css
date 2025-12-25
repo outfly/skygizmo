@@ -3,6 +3,15 @@
 }
 
 body {
+  /* —————————— structure —————————— */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* —————————— style —————————— */
   margin: 0;
   background-color: var(--clr-pri-4);
   color: var(--clr-pri-2);
@@ -10,5 +19,6 @@ body {
 }
 
 main {
+  flex-grow: 1;
   padding: 1rem;
 }

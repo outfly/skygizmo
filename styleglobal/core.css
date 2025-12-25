@@ -19,12 +19,8 @@
 }
 
 /* —————————— Footer —————————— */
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+footer {
   background-color: var(--clr-pri-2);
   color: var(--clr-pri-4);
   text-align: center;
-  box-shadow: 0 -1px 5px rgba(227, 222, 219, 0.85);
 }
