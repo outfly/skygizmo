@@ -8,11 +8,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   max-width: 90rem;
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
 
   /* —————————— style —————————— */
-  margin: 0;
   background-color: var(--clr-pri-4);
   color: var(--clr-pri-2);
   font-family: Helvetica, Arial, sans-serif;
