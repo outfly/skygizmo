@@ -23,5 +23,9 @@ async function loadComponent(targetId, componentPath) {
 }
 
 /* Core components (load on every page) */
-loadComponent("hdr", "components/core/hdr.html");
-loadComponent("ftr", "components/core/ftr.html");
+(async () => {
+  await Promise.all([loadComponent("hdr", "components/core/hdr.html"), loadComponent("ftr", "components/core/ftr.html")]);
+
+  /* Insert current year */
+  document.getElementById("yr").innerHTML = new Date().getFullYear();
+})();

@@ -22,5 +22,8 @@
 footer {
   background-color: var(--clr-pri-2);
   color: var(--clr-pri-4);
+  font-size: 0.65rem;
   text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
 }
