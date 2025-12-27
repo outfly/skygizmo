@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styleglobal/vrbls.css" />
+    <link rel="stylesheet" href="../../styleglobal/main.css" />
+    <link rel="stylesheet" href="../../styleglobal/core.css" />
+    <link rel="stylesheet" href="./fdock.css" />
+
+    <!-- Docket structure and style -->
+    <link rel="stylesheet" href="../../components/docket/docketstr.css" />
+    <link rel="stylesheet" href="../../components/docket/docketsty.css" />
+
+    <title>Fuel Docket - SkyGizmo</title>
+    <script src="../../components/core/core.js" defer></script>
+    <script src="./fdock.js" defer></script>
+  </head>
+  <body>
+    <header id="hdr"></header>
+    <main id="main">
+      <h1>Fuel Docket</h1>
+      <div class="inp">
+        <div>
+          <span>Fleet:</span>
+          <input type="radio" id="a320" name="variant" />
+          <label for="a320">A320ceo</label>
+          <input type="radio" id="a20n" name="variant" />
+          <label for="a20n">A320neo</label>
+          <input type="radio" id="a321" name="variant" />
+          <label for="a321">A321ceo</label>
+          <input type="radio" id="a21n" name="variant" />
+          <label for="a21n">A321neo</label>
+        </div>
+        <br />
+        <table>
+          <tr>
+            <td><label for="reg_tow">RTOW:</label></td>
+            <td>
+              <input type="number" id="reg_tow" placeholder="77.0" />
+              <span>T</span>
+              <button>*</button>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="reg_lgw">Dispatch MLW:</label></td>
+            <td>
+              <input type="number" id="reg_lgw" placeholder="66.0" />
+              <span>T</span>
+              <button>*</button>
+            </td>
+          </tr>
+        </table>
+        <div></div>
+      </div>
+      <div class="calc">
+        <div>Details <a href="#" onclick="return false;">show/hide</a></div>
+        <br />
+        <table class="tbl">
+          <tr>
+            <td></td>
+            <td>Zero Fuel</td>
+            <td>Take Off</td>
+            <td>Landing</td>
+          </tr>
+          <tr>
+            <td>Max Weight for (KG)</td>
+            <td id="ls_mzfw">62500</td>
+            <td id="ls_mtow">77000</td>
+            <td id="ls_mlgw">66000</td>
+          </tr>
+          <tr>
+            <td>Take off fuel (+ KG)</td>
+            <td id="ls_to_fu">14500</td>
+            <td class="dsbld" rowspan="2">↓</td>
+            <td class="dsbld">↓</td>
+          </tr>
+          <tr>
+            <td>Trip fuel (− KG)</td>
+            <td class="dsbld">↓</td>
+            <td id="ls_trp_fu">11000</td>
+          </tr>
+          <tr>
+            <td>Allowed Take off weight (KG)<br />(Lowest A, B or C)</td>
+            <td id="ls_tow_a">77000</td>
+            <td id="ls_tow_b">77000</td>
+            <td id="ls_tow_c">77000</td>
+          </tr>
+        </table>
+      </div>
+      <div class="docket-card">
+        <div id="dkt" class="docket"></div>
+      </div>
+      <div class="rem">Underload: 0 kgs.</div>
+    </main>
+    <footer id="ftr"></footer>
+  </body>
+</html>

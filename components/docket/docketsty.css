@@ -1,0 +1,82 @@
+/* —————————— Docket Style —————————— */
+.docket {
+  background-color: var(--clr-bkg);
+  border: var(--brd-pri);
+}
+
+.lg {
+  font-size: 3rem;
+}
+
+.tl {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-size: 2rem;
+}
+
+.val:not(:nth-child(28)) {
+  text-align: center;
+  /* letter-spacing: 0.25rem; */
+}
+
+.inact,
+.fall-back {
+  background-color: var(--clr-inact);
+  color: var(--clr-inact-txt);
+}
+
+.docket > div:not(.fall-back) {
+  padding: 0.8rem 0.5rem;
+}
+
+.fall-back {
+  font-size: 0.7rem;
+  padding: 0.04rem 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .wrp {
+    border-bottom: var(--brd-pri);
+  }
+
+  .docket > .fld {
+    text-align: center;
+    border-bottom: var(--brd-sec);
+  }
+
+  .docket > .val:not(.lc-3) {
+    border-bottom: var(--brd-pri);
+  }
+
+  .fall-back:nth-child(10) {
+    border-bottom: var(--brd-sec);
+  }
+
+  .fall-back:last-child {
+    border-top: var(--brd-sec);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .docket > div:not(:nth-child(28), :nth-child(29), :nth-child(30)) {
+    border-bottom: var(--brd-sec);
+  }
+
+  .docket > div.inact:not(:nth-child(7), :nth-child(9), :nth-child(14), :nth-child(18), :nth-child(27), :nth-child(30)) {
+    border-right: var(--brd-sec);
+  }
+  .docket > div:not(.lc-3.fld):not(:nth-child(8), :nth-child(9), :nth-child(13), :nth-child(14), :nth-child(26), :nth-child(27), :nth-child(28), :nth-child(29), :nth-child(30)) {
+    border-bottom: var(--brd-pri);
+  }
+
+  .lc-2,
+  .lc-3 {
+    border-right: var(--brd-pri);
+  }
+
+  .lc-1,
+  .rc-1 {
+    border-right: var(--brd-pri);
+  }
+}

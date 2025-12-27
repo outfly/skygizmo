@@ -1,0 +1,44 @@
+:root {
+  /* Colors */
+  --clr-bkg: rgb(255, 255, 204);
+  --clr-inact: rgb(229, 229, 183); /* ? */
+  --clr-inact-txt: rgb(185, 185, 147);
+  --clr-blk: rgb(0, 0, 0);
+
+  /* Borders */
+  --brd-pri: 1px solid var(--clr-blk);
+  --brd-sec: 0.5px solid var(--clr-inact-txt);
+}
+
+.inp, .calc, .docket-card, .rem {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.inp, .docket-card, .rem {
+  background-color: var(--clr-pri-3);
+}
+
+.calc {
+  background-color: var(--clr-sec-4);
+}
+
+/* —————————— Details Table —————————— */
+.tbl {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tbl, .tbl td {
+  border: 1px solid black;
+}
+
+.tbl td {
+  background-color: var(--clr-pri-4);
+  padding: 0.35rem;
+}
+
+.tbl td:not(:nth-child(1)) {
+  text-align: center;
+}
