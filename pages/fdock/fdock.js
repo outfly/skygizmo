@@ -9,4 +9,5 @@ async function loadComponent(targetId, componentPath) {
   target.innerHTML = await response.text();
 }
 
+loadComponent("wgt-tbl", "components/wgt-tbl/wgt-tbl.html");
 loadComponent("dkt", "components/docket/docket.html");

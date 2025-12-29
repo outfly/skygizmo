@@ -21,7 +21,7 @@
 }
 
 .calc {
-  background-color: var(--clr-sec-4);
+  border: var(--brd) var(--tbl-clr-pri);
 }
 
 /* —————————— Details Table —————————— */

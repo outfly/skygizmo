@@ -1,0 +1,83 @@
+:root {
+  --brd: 2px solid;
+  --tbl-clr-pri: rgb(157, 208, 142);
+  --tbl-clr-sec: rgb(228, 255, 228);
+}
+
+/* —————————— Structure —————————— */
+
+#wgt-tbl {
+  background-color: white;
+  margin-top: 1rem;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.col {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr) 1.5fr;
+}
+
+.s-2 {
+  grid-row: span 2;
+}
+
+@media screen and (max-width: 767px) {
+  .col:not(:first-child, :nth-child(2)) {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #wgt-tbl {
+    grid-template-columns: auto repeat(3, 1fr);
+  }
+
+  .mob-only {
+    display: none;
+  }
+}
+
+/* —————————— Borders —————————— */
+
+.col {
+  border-top: var(--brd) var(--tbl-clr-pri);
+  border-left: var(--brd) var(--tbl-clr-pri);
+}
+
+.cl {
+  border-bottom: var(--brd) var(--tbl-clr-pri);
+}
+
+@media screen and (max-width: 767px) {
+  .col:nth-child(even) {
+    border-right: var(--brd) var(--tbl-clr-pri);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .col:last-child {
+    border-right: var(--brd) var(--tbl-clr-pri);
+  }
+}
+
+/* —————————— Misc —————————— */
+
+.cl {
+  padding: 0.5rem;
+}
+
+.ignrd {
+  background-color: var(--tbl-clr-sec);
+  color: var(--tbl-clr-pri);
+}
+
+@media screen and (max-width: 767px) {
+  .ignrd-mob-only {
+    background-color: var(--tbl-clr-sec);
+    color: var(--tbl-clr-pri);
+  }
+}
