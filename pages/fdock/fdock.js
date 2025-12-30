@@ -9,5 +9,6 @@ async function loadComponent(targetId, componentPath) {
   target.innerHTML = await response.text();
 }
 
+loadComponent("perf", "components/perfcalc/perfcalc.html");
 loadComponent("wgt-tbl", "components/wgt-tbl/wgt-tbl.html");
 loadComponent("dkt", "components/docket/docket.html");

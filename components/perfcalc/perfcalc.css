@@ -1,0 +1,125 @@
+:root {
+  --color-title-background-1: rgb(237, 237, 237);
+  --color-title-background-2: rgb(183, 187, 192);
+  --color-title-foreground: rgb(83, 98, 107);
+  --color-title-border: rgb(118, 122, 128);
+  --color-input-inner-background: rgb(67, 67, 67);
+  --color-input-text: rgb(255, 255, 255);
+  --color-input-foreground: rgb(79, 244, 61);
+  --color-input-border: rgb(41, 44, 50);
+}
+
+.wrapper {
+  padding: 1.25rem;
+  width: fit-content;
+
+  border: 2px solid black;
+  border-radius: 0.5rem;
+
+  /* background: repeating-linear-gradient(180deg, #7a7a7a 0px, #7a7a7a 1px, #6f6f6f 2px, #7a7a7a 3px); */
+  background-image: url("./background-effect.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 50%;
+  overflow: hidden;
+  /* background keeps moving while resizing window, needs to stop */
+}
+
+.calculation {
+  display: flex;
+}
+
+.calculation:nth-child(2) {
+  margin-top: 0.75rem;
+}
+
+.title {
+  background: linear-gradient(to bottom, var(--color-title-background-1), var(--color-title-background-2));
+  color: var(--color-title-foreground);
+  border-radius: 0.15rem;
+  /* border-bottom: 1px solid var(--color-title-border); */
+
+  width: 15rem;
+  margin-right: 1rem;
+
+  display: flex;
+  align-items: center; /* vertical */
+  justify-content: center; /* horizontal */
+
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8), /* 2px drop shadow downward */ 0 0 1px rgba(146, 155, 160, 1); /* 1px highlight for engraved effect */
+}
+
+.input {
+  background-color: var(--color-input-outer-background);
+  background-color: var(--color-input-inner-background);
+  border: 1px solid var(--color-input-border);
+  border-radius: 0.7rem;
+
+  box-shadow: inset 4px 4px 4px rgba(47, 47, 47, 0.75), inset -4px -4px 4px rgba(47, 47, 47, 0.75), 0 1px 0px rgba(255, 255, 255, 0.5);
+
+  display: flex;
+
+  width: 15.8667rem;
+  /* padding: 0.8667rem; */
+  padding: 0.65rem 1rem;
+
+  /* closest font match Myriad */
+}
+
+.input > div {
+  font-size: 1.05rem;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.label {
+  color: var(--color-input-text);
+}
+
+.value,
+.unit {
+  color: var(--color-input-foreground);
+}
+
+.value {
+  flex: 1;
+  text-align: right;
+
+  font-weight: bold;
+}
+
+.unit {
+  padding-left: 1.5rem;
+}
+
+.button {
+  margin-left: 1rem;
+  /* background-color: red; */
+  width: 2.8rem;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-title-background-1), var(--color-title-background-2));
+  border-width: 1px;
+  border-radius: 0.5rem;
+  /* border: 0; */
+
+  color: var(--color-title-foreground);
+  font-weight: bold;
+  font-size: large;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8), /* 2px drop shadow downward */ 0 0 1px rgba(146, 155, 160, 1); /* 1px highlight for engraved effect */
+
+  cursor: grab;
+
+  transition: all 0.1s ease;
+  position: relative;
+}
+
+button:active {
+  top: 1px;
+  /* left: 1px; */
+  /* background-color: red; */
+  cursor: grabbing;
+}

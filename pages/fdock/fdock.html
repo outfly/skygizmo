@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../../styleglobal/core.css" />
     <link rel="stylesheet" href="./fdock.css" />
 
+    <!-- Performance calculations style -->
+    <link rel="stylesheet" href="../../components/perfcalc/perfcalc.css" />
+
     <!-- Weights table style -->
     <link rel="stylesheet" href="../../components/wgt-tbl/wgt-tbl.css" />
 
@@ -24,7 +27,7 @@
     <main id="main">
       <h1>Fuel Docket</h1>
       <div class="inp">
-        <div>
+        <div style="display: flex; align-items: center; justify-content: center;">
           <span>Fleet:</span>
           <input type="radio" id="a320" name="variant" />
           <label for="a320">A320ceo</label>
@@ -35,26 +38,12 @@
           <input type="radio" id="a21n" name="variant" />
           <label for="a21n">A321neo</label>
         </div>
-        <br />
-        <table>
-          <tr>
-            <td><label for="reg_tow">RTOW:</label></td>
-            <td>
-              <input type="number" id="reg_tow" placeholder="77.0" />
-              <span>T</span>
-              <button>*</button>
-            </td>
-          </tr>
-          <tr>
-            <td><label for="reg_lgw">Dispatch MLW:</label></td>
-            <td>
-              <input type="number" id="reg_lgw" placeholder="66.0" />
-              <span>T</span>
-              <button>*</button>
-            </td>
-          </tr>
-        </table>
-        <div></div>
+        <p style="text-align: center;">
+          AB - AH (Based on  selection above)
+        <br>
+          Max TOW: 77000 | Max LW: 66000 | Max ZFW: 62500
+        </p>
+        <div id="perf"></div>
       </div>
       <div class="calc">
         <div>Details <a href="#" onclick="return false;">show/hide</a></div>
