@@ -12,20 +12,15 @@ function getAppRoot() {
 }
 
 async function loadComponent(targetId, componentPath) {
-  const target = document.getElementById(targetId);
-  if (!target) return;
+  const component = document.getElementById(targetId);
+  if (!component) return null;
 
+  // construct a correct path (for localhost and github pages)
   const root = getAppRoot();
   const url = root + componentPath;
 
   const response = await fetch(url);
-  target.innerHTML = await response.text();
+  component.innerHTML = await response.text();
 }
 
-/* Core components (load on every page) */
-(async () => {
-  await Promise.all([loadComponent("hdr", "components/core/hdr.html"), loadComponent("ftr", "components/core/ftr.html")]);
-
-  /* Insert current year */
-  document.getElementById("yr").innerHTML = new Date().getFullYear();
-})();
+export default loadComponent;

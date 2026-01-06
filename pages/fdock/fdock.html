@@ -19,15 +19,14 @@
     <link rel="stylesheet" href="../../components/docket/docketsty.css" />
 
     <title>Fuel Docket - SkyGizmo</title>
-    <script src="../../components/core/core.js" defer></script>
-    <script src="./fdock.js" defer></script>
+    <script type="module" src="./fdock.js" defer></script>
   </head>
   <body>
     <header id="hdr"></header>
     <main id="main">
       <h1>Fuel Docket</h1>
       <div class="inp">
-        <div style="display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; align-items: center; justify-content: center">
           <span>Fleet:</span>
           <input type="radio" id="a320" name="variant" />
           <label for="a320">A320ceo</label>
@@ -38,9 +37,9 @@
           <input type="radio" id="a21n" name="variant" />
           <label for="a21n">A321neo</label>
         </div>
-        <p style="text-align: center;">
-          AB - AH (Based on  selection above)
-        <br>
+        <p style="text-align: center">
+          AB - AH (Based on selection above)
+          <br />
           Max TOW: 77000 | Max LW: 66000 | Max ZFW: 62500
         </p>
         <div id="perf"></div>

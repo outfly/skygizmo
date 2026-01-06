@@ -1,14 +1,16 @@
-async function loadComponent(targetId, componentPath) {
-  const target = document.getElementById(targetId);
-  if (!target) return;
+import loadComponent from "../../src/shared/load-component.js";
+import loadCore from "../../src/shared/load-core.js";
 
-  const root = getAppRoot();
-  const url = root + componentPath;
+// Load header & footer
+loadCore();
 
-  const response = await fetch(url);
-  target.innerHTML = await response.text();
+// Load page main components
+const components = {
+  "perf": "components/perfcalc/perfcalc.html",
+  "wgt-tbl": "components/wgt-tbl/wgt-tbl.html",
+  "dkt": "components/docket/docket.html",
+};
+
+for (const [targetId, componentPath] of Object.entries(components)) {
+  loadComponent(targetId, componentPath);
 }
-
-loadComponent("perf", "components/perfcalc/perfcalc.html");
-loadComponent("wgt-tbl", "components/wgt-tbl/wgt-tbl.html");
-loadComponent("dkt", "components/docket/docket.html");
