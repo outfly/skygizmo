@@ -1,0 +1,22 @@
+/* utility flexbox horizontal responsive */
+.u-flx-h-res {
+  display: flex;
+  flex-direction: column;
+}
+
+/* utility flexbox vertical reverse*/
+.u-flx-v {
+  display: flex;
+  flex-direction: column-reverse;
+  /* flex-direction: column; */
+}
+
+@media screen and (min-width: 1024px) {
+  .u-flx-h-res {
+    flex-direction: row;
+  }
+
+  .u-flx-h-res > * {
+    margin-left: var(--size-s);
+  }
+}

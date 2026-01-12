@@ -1,0 +1,9 @@
+/* —————————— Footer —————————— */
+footer {
+  background-color: var(--clr-pri-2);
+  color: var(--clr-pri-4);
+  font-size: var(--size-xs);
+  text-align: center;
+  padding-top: var(--size-xxs);
+  padding-bottom: var(--size-xxxxs);
+}

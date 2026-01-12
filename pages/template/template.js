@@ -1,8 +1,8 @@
-import loadComponent from "../../src/shared/load-component.js";
-import loadCore from "../../src/shared/load-core.js";
+import loadHdrFtr from "../../jsglobal/load-hdr-ftr.js";
+import loadComponent from "../../jsglobal/load-component.js";
 
 // Load header & footer
-loadCore();
+loadHdrFtr();
 
 // Load page main components
 // TODO: can use a for loop if more than one component exists, see fdock.js

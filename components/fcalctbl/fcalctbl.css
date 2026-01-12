@@ -1,0 +1,143 @@
+/* #region ——————————————————————————— Variables ———————————————————————————— */
+#repl {
+  /* ———————————— Colors ———————————— */
+  --clr-ttl: rgb(52, 68, 102);
+  --clr-lbl: rgb(173, 178, 198);
+  --clr-hl: rgb(255, 233, 196);
+  --clr-wht: rgb(255, 255, 255);
+  --clr-gry: rgb(191, 191, 191);
+  --clr-blk: rgb(0, 0, 0);
+
+  /* ——————————— Borders ———————————— */
+  --brd-pri: 1px solid var(--clr-blk);
+
+  /* old borders not implemented yet */
+  --brd-sec-1: 0.5px solid var(--clr-fld);
+  --brd-sec-2: 0.5px solid var(--clr-wht);
+}
+/* #endregion */
+
+/* #region ——————————————————————————— Structure ———————————————————————————— */
+/* TODO: say its applied in main html */
+#repl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-flow: dense;
+}
+
+#repl .ttl,
+#repl .nt {
+  grid-column: 1 / -1;
+}
+
+#repl .sn-a {
+  grid-row: span 2;
+}
+
+#repl .sn-b {
+  grid-row: span 3;
+}
+
+@media screen and (min-width: 768px) {
+  .card:has(#repl) {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #repl {
+    grid-template-columns: 1fr repeat(2, auto);
+  }
+
+  #repl .sn-a {
+    grid-row: span 1;
+  }
+
+  #repl .sn-b {
+    grid-row: span 2;
+  }
+
+  #repl .sn-a,
+  #repl .sn-b {
+    grid-column: 2 / 3;
+  }
+
+  #repl .unt {
+    grid-column: 1 / 2;
+  }
+
+  #repl .val-b {
+    grid-row: span 2;
+  }
+}
+/* #endregion */
+
+/* #region ———————————————————————————— Borders ————————————————————————————— */
+/* these borders below are to be adjusted to overall apps visuals */
+#repl {
+  border-left: var(--brd-pri);
+  border-right: var(--brd-pri);
+  border-bottom: var(--brd-pri);
+}
+
+#repl > * {
+  border-top: var(--brd-pri);
+}
+
+#repl .sn-a,
+#repl .sn-b {
+  border-right: var(--brd-pri);
+}
+
+@media screen and (min-width: 768px) {
+  #repl .sn-a,
+  #repl .sn-b {
+    border-left: var(--brd-pri);
+  }
+}
+/* #endregion */
+
+/* #region ————————————————————————————— Colors ————————————————————————————— */
+#repl {
+  background-color: var(--clr-wht);
+}
+
+#repl .ttl {
+  background-color: var(--clr-ttl);
+  color: var(--clr-wht);
+}
+
+#repl .lbl,
+#repl .nt,
+#repl .unt {
+  background-color: var(--clr-lbl);
+}
+
+#repl .hl {
+  background-color: var(--clr-hl);
+}
+/* #endregion */
+
+/* #region —————————————————————— Alignment & Padding ——————————————————————— */
+#repl .ttl,
+#repl .sn-a,
+#repl .sn-b,
+#repl .lbl,
+#repl .nt,
+#repl .val-a,
+#repl .val-b,
+#repl .unt {
+  display: flex;
+  align-items: center; /* vertical */
+  justify-content: center; /* horizontal */
+
+  /* TODO: magic number, to be aligned with global variables */
+  padding: 0.875rem;
+}
+
+@media screen and (min-width: 768px) {
+  #repl .lbl {
+    justify-content: left; /* horizontal */
+  }
+}
+/* #endregion */

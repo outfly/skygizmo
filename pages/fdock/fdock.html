@@ -3,29 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../styleglobal/vrbls.css" />
     <link rel="stylesheet" href="../../styleglobal/main.css" />
-    <link rel="stylesheet" href="../../styleglobal/core.css" />
     <link rel="stylesheet" href="./fdock.css" />
-
-    <!-- Performance calculations style -->
-    <link rel="stylesheet" href="../../components/perfcalc/perfcalc.css" />
-
-    <!-- Weights table style -->
-    <link rel="stylesheet" href="../../components/wgt-tbl/wgt-tbl.css" />
-
-    <!-- Docket structure and style -->
-    <link rel="stylesheet" href="../../components/docket/docketstr.css" />
-    <link rel="stylesheet" href="../../components/docket/docketsty.css" />
-
     <title>Fuel Docket - SkyGizmo</title>
     <script type="module" src="./fdock.js" defer></script>
   </head>
   <body>
     <header id="hdr"></header>
-    <main id="main">
+    <main>
       <h1>Fuel Docket</h1>
-      <div class="inp">
+      <section class="_inp_ card">
         <div style="display: flex; align-items: center; justify-content: center">
           <span>Fleet:</span>
           <input type="radio" id="a320" name="variant" />
@@ -43,15 +30,16 @@
           Max TOW: 77000 | Max LW: 66000 | Max ZFW: 62500
         </p>
         <div id="perf"></div>
-      </div>
-      <div class="calc">
-        <div>Details <a href="#" onclick="return false;">show/hide</a></div>
-        <div id="wgt-tbl"></div>
-      </div>
-      <div class="docket-card">
-        <div id="dkt" class="docket"></div>
-      </div>
-      <div class="rem">Underload: 0 kgs.</div>
+        <div class="_calc_ card_ card-extn">
+          <div>Details <a href="#" onclick="return false;">show/hide</a></div>
+          <div id="wgt-tbl"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div id="dkt"></div>
+      </section>
+      <div class="rem_ card">Underload: 0 kgs.</div>
     </main>
     <footer id="ftr"></footer>
   </body>

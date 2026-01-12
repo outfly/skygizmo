@@ -1,0 +1,192 @@
+/* #region ——————————————————————————— Variables ———————————————————————————— */
+#dkt {
+  /* ———————————— Colors ———————————— */
+  --clr-bkg: rgb(255, 255, 204);
+  --clr-inact: rgb(229, 229, 183); /* ? */
+  --clr-inact-txt: rgb(185, 185, 147);
+  --clr-blk: rgb(0, 0, 0);
+
+  /* ——————————— Borders ———————————— */
+  --brd-pri: 1px solid var(--clr-blk);
+  --brd-sec: 0.5px solid var(--clr-inact-txt);
+}
+/* #endregion */
+
+/* #region ——————————————— Title Details, Alignment & Padding ——————————————— */
+#dkt .lbl,
+#dkt .val,
+#dkt > :nth-child(29) {
+  display: flex;
+  align-items: center; /* vertical */
+  justify-content: center; /* horizontal */
+}
+
+#dkt > *:not(.mob) {
+  padding: var(--size-s) var(--size-xxs);
+}
+
+#dkt .mob {
+  font-size: var(--size-s);
+  padding: var(--size-0) var(--size-xxs);
+}
+
+@media screen and (min-width: 768px) {
+  #dkt .lbl,
+  #dkt > :nth-child(29) {
+    justify-content: left;
+  }
+}
+/* #endregion */
+
+/* #region ——————————————————————————— Structure ———————————————————————————— */
+/* TODO: say its applied in main html */
+#dkt {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+#dkt .ttl {
+  display: flex;
+  justify-content: space-between;
+}
+
+#dkt .ttl > :first-child {
+  /* TODO: magic number below, to be aligned with global variables */
+  font-size: 3rem;
+}
+
+#dkt .ttl > :nth-child(2) {
+  display: flex;
+  align-items: center; /* vertical */
+  /* TODO: magic number below, to be aligned with global variables */
+  font-size: 2rem;
+}
+
+#dkt .dskt {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card:has(#dkt) {
+    /* TODO: magic number below, to be aligned with global variables */
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #dkt {
+    grid-template-columns: repeat(8, 1fr);
+    --rto: 2 / 1;
+    width: clamp(auto, auto, var(--rto));
+  }
+
+  #dkt .mob {
+    display: none;
+  }
+
+  #dkt .dskt {
+    display: flex;
+  }
+
+  #dkt .ttl {
+    grid-column: 1 / -1;
+  }
+
+  #dkt .lbl,
+  #dkt .val,
+  #dkt .cols-2 {
+    grid-column: span 2;
+  }
+
+  #dkt .cols-3 {
+    grid-column: span 3;
+  }
+
+  #dkt .cols-4 {
+    grid-column: span 4;
+  }
+}
+/* #endregion */
+
+/* #region ———————————————————————————— Borders ————————————————————————————— */
+/* these borders below are to be adjusted to overall apps visuals */
+#dkt {
+  border-left: var(--brd-pri);
+  border-right: var(--brd-pri);
+  border-bottom: var(--brd-pri);
+}
+
+#dkt > * {
+  border-top: var(--brd-pri);
+}
+
+@media screen and (max-width: 767px) {
+  #dkt > :nth-child(11),
+  #dkt > :nth-child(12),
+  #dkt > :nth-child(16),
+  #dkt > :nth-child(20),
+  #dkt > :nth-child(24),
+  #dkt > :nth-child(26),
+  #dkt > :nth-child(28),
+  #dkt > :nth-child(32),
+  #dkt > :nth-child(35) {
+    border-top: var(--brd-sec);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #dkt {
+    border-right: none;
+  }
+
+  #dkt .ttl,
+  #dkt .dskt,
+  #dkt .lbl,
+  #dkt .val,
+  #dkt .cols-4 {
+    border-right: var(--brd-pri);
+  }
+
+  #dkt > :nth-child(9),
+  #dkt > :nth-child(10),
+  #dkt > :nth-child(13),
+  #dkt > :nth-child(14),
+  #dkt > :nth-child(17),
+  #dkt > :nth-child(18),
+  #dkt > :nth-child(21),
+  #dkt > :nth-child(22),
+  #dkt > :nth-child(33),
+  #dkt > :nth-child(34) {
+    border-top: var(--brd-sec);
+  }
+
+  #dkt > :nth-child(2),
+  #dkt > :nth-child(3),
+  #dkt > :nth-child(4),
+  #dkt > :nth-child(5),
+  #dkt > :nth-child(6),
+  #dkt > :nth-child(9),
+  #dkt > :nth-child(13),
+  #dkt > :nth-child(17),
+  #dkt > :nth-child(21),
+  #dkt > :nth-child(30),
+  #dkt > :nth-child(33) {
+    border-right: var(--brd-sec);
+  }
+}
+/* #endregion */
+
+/* #region ————————————————————————————— Colors ————————————————————————————— */
+#dkt {
+  background-color: var(--clr-bkg);
+}
+
+#dkt .dskt,
+#dkt .mob {
+  background-color: var(--clr-inact);
+  color: var(--clr-inact-txt);
+}
+
+@media screen and (min-width: 768px) {
+}
+/* #endregion */

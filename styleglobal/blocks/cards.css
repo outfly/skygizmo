@@ -1,0 +1,24 @@
+.card {
+  margin-top: var(--size-s);
+  padding: var(--size-xxs);
+
+  background-color: var(--clr-pri-3);
+
+  border-radius: var(--size-xxs);
+  border: 1px solid salmon;
+}
+
+.card h4 {
+  /* empth */
+}
+
+.card p {
+  /* empty */
+}
+
+.card-extn {
+  /* background-color: yellow; */
+  border-top: 1px solid crimson;
+  margin-top: var(--size-xxs);
+  padding-top: var(--size-xxs);
+} 

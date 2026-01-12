@@ -1,24 +1,12 @@
-* {
-  box-sizing: border-box;
-}
+/* temporary css to be removed ↓ */
+/* @import url("./tmp-x-ray.css"); */
 
-body {
-  /* —————————— structure —————————— */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: 90rem;
-  margin: 0;
-  margin-left: auto;
-  margin-right: auto;
+@import url("./base/variables.css");
+@import url("./base/reset.css");
+@import url("./base/global.css");
+@import url("./base/utilities.css");
 
-  /* —————————— style —————————— */
-  background-color: var(--clr-pri-4);
-  color: var(--clr-pri-2);
-  font-family: Helvetica, Arial, sans-serif;
-}
+@import url("../components/shared/hdr/hdr.css");
+@import url("../components/shared/ftr/ftr.css");
 
-main {
-  flex-grow: 1;
-  padding: 1rem;
-}
+@import url("./blocks/cards.css");

@@ -1,0 +1,21 @@
+body {
+  /* —————————— structure ——————————— */
+  display: flex;
+  flex-direction: column;
+
+  max-width: var(--win-max);
+  margin: 0 auto;
+
+  min-height: 100vh; /* fallback for ↓ */
+  min-height: 100dvh; /* mobile address bar showing/hiding  */
+
+  /* ———————————— style ————————————— */
+  background-color: var(--clr-pri-4);
+  color: var(--clr-pri-2);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  flex-grow: 1;
+  padding: var(--size-m);
+}

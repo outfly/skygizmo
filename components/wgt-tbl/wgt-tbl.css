@@ -1,83 +1,104 @@
-:root {
-  --brd: 2px solid;
-  --tbl-clr-pri: rgb(157, 208, 142);
-  --tbl-clr-sec: rgb(228, 255, 228);
-}
-
-/* —————————— Structure —————————— */
-
+/* #region ——————————————————————————— Variables ———————————————————————————— */
 #wgt-tbl {
-  background-color: white;
-  margin-top: 1rem;
+  /* ———————————— Colors ———————————— */
+  --clr-pri: rgb(157, 208, 142);
+  --clr-sec: rgb(228, 255, 228);
+  --clr-bkg: rgb(255, 255, 255);
 
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* ——————————— Borders ———————————— */
+  /* TODO: magic number below to be aligned with global variables */
+  --brd: 2px solid var(--clr-pri);
 }
+/* #endregion */
 
-.col {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr) 1.5fr;
-}
-
-.s-2 {
-  grid-row: span 2;
-}
-
+/* #region —————————————————————— Alignment & Padding ——————————————————————— */
 @media screen and (max-width: 767px) {
-  .col:not(:first-child, :nth-child(2)) {
-    margin-top: 0.5rem;
+  #wgt-tbl > :nth-child(6),
+  #wgt-tbl > :nth-child(11),
+  #wgt-tbl > :nth-child(21),
+  #wgt-tbl > :nth-child(25) {
+    margin-top: var(--size-xs);
   }
+}
+
+#wgt-tbl > * {
+  display: flex;
+  align-items: center; /* vertical */
+
+  padding: var(--size-xxxxs) var(--size-xs);
+}
+
+#wgt-tbl > :nth-child(n+16):nth-child(-n+29) {
+  justify-content: center; /* horizontal */
+}
+/* #endregion */
+
+/* #region ——————————————————————————— Structure ———————————————————————————— */
+#wgt-tbl {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(15, auto);
+}
+
+#wgt-tbl .spn-r-2 {
+  grid-row: span 2;
 }
 
 @media screen and (min-width: 768px) {
   #wgt-tbl {
-    grid-template-columns: auto repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
   }
 
-  .mob-only {
+  #wgt-tbl .mob {
     display: none;
   }
 }
+/* #endregion */
 
-/* —————————— Borders —————————— */
-
-.col {
-  border-top: var(--brd) var(--tbl-clr-pri);
-  border-left: var(--brd) var(--tbl-clr-pri);
+/* #region ———————————————————————————— Borders ————————————————————————————— */
+#wgt-tbl {
+  border-bottom: var(--brd);
 }
 
-.cl {
-  border-bottom: var(--brd) var(--tbl-clr-pri);
+#wgt-tbl > * {
+  border-top: var(--brd);
+  border-left: var(--brd);
 }
 
 @media screen and (max-width: 767px) {
-  .col:nth-child(even) {
-    border-right: var(--brd) var(--tbl-clr-pri);
+  #wgt-tbl > :nth-child(n + 16):nth-child(-n + 29) {
+    border-right: var(--brd);
+  }
+
+  #wgt-tbl > :nth-child(5),
+  #wgt-tbl > :nth-child(10),
+  #wgt-tbl > :nth-child(20),
+  #wgt-tbl > :nth-child(24) {
+    border-bottom: var(--brd);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .col:last-child {
-    border-right: var(--brd) var(--tbl-clr-pri);
+  #wgt-tbl > :nth-child(n + 25):nth-child(-n + 29) {
+    border-right: var(--brd);
   }
 }
+/* #endregion */
 
-/* —————————— Misc —————————— */
-
-.cl {
-  padding: 0.5rem;
+/* #region ————————————————————————————— Colors ————————————————————————————— */
+#wgt-tbl > *:not(.de-emph) {
+  background-color: var(--clr-bkg);
 }
 
-.ignrd {
-  background-color: var(--tbl-clr-sec);
-  color: var(--tbl-clr-pri);
+#wgt-tbl .de-emph {
+  background-color: var(--clr-sec);
+  color: var(--clr-pri);
 }
 
 @media screen and (max-width: 767px) {
-  .ignrd-mob-only {
-    background-color: var(--tbl-clr-sec);
-    color: var(--tbl-clr-pri);
+  #wgt-tbl > :nth-child(4) {
+    background-color: var(--clr-sec);
+    color: var(--clr-pri);
   }
 }
+/* #endregion */

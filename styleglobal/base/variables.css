@@ -1,0 +1,37 @@
+:root {
+  /* #region ———————————————————————— window widths ————————————————————————— */
+  --win-tablet: 768px; /* unusable with @media queries */
+  --win-laptop: 1024px; /* unusable with @media queries */
+  --win-max: 1440px;
+  /* #endregion */
+
+  /* #region ———————————————————————————— colors ———————————————————————————— */
+
+  /* ——————————— primary ———————————— */
+  --clr-pri-1: rgb(161, 143, 99);
+  --clr-pri-2: rgb(20, 20, 31);
+  --clr-pri-3: rgb(227, 222, 219);
+  --clr-pri-4: rgb(245, 247, 245);
+
+  /* —————————— secondary ——————————— */
+  --clr-sec-1: rgb(0, 171, 168);
+  --clr-sec-2: rgb(237, 135, 102);
+  --clr-sec-3: rgb(247, 209, 148);
+  --clr-sec-4: rgb(140, 204, 207);
+  --clr-sec-5: rgb(41, 31, 38);
+  --clr-sec-6: rgb(0, 3, 10);
+  /* #endregion */
+
+  /* #region ———————————————————————————— sizes ————————————————————————————— */
+  --size-0: 0;
+  --size-xxxxs: 0.25rem;
+  --size-xxxs: 0.333rem;
+  --size-xxs: 0.5rem;
+  --size-xs: 0.667rem;
+  --size-s: 0.75rem;
+  --size-m: 1rem;
+  --size-l: 1.25rem;
+  --size-xl: 1.5rem;
+  --size-xxl: 1.75rem;
+  /* #endregion */
+}
