@@ -1,0 +1,108 @@
+/* #region ——————————————————————————— Variables ———————————————————————————— */
+#flt-sel {
+  /* ———————————— Colors ———————————— */
+  --clr-widget-brd: rgb(240, 240, 240);
+  --clr-widget-bkg: white;
+  --clr-grp-brd: rgb(219, 219, 219);
+  --clr-lbl-bkg: rgb(249, 249, 249);
+  --clr-lbl-txt: rgb(51, 65, 85);
+  --clr-lbl-sel-bkg: rgb(230, 238, 249);
+  --clr-lbl-sel-txt: rgb(24, 94, 224);
+
+  /* ———————————— Sizes ————————————— */
+  --size-one-third: 0.3333rem;
+  --size-one-half: 0.5rem;
+  --size-seven-tenths: 0.7rem;
+  --size-one: 1rem;
+  --size-5x: 5rem;
+
+  /* ——————————— Borders ———————————— */
+  --brd-grp: 1px solid var(--clr-grp-brd);
+}
+/* #endregion */
+
+/* #region ——————————————————————————— Structure ———————————————————————————— */
+#flt-sel {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+#flt-sel .grp {
+  flex: 1 1 100%;
+
+  display: flex;
+}
+
+#flt-sel label {
+  flex: 1;
+}
+
+#flt-sel input {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #flt-sel {
+    flex-wrap: nowrap;
+    max-width: 85%;
+  }
+
+  #flt-sel .grp {
+    /* TODO: flex grow ratio doesn't result in equal buttons */
+    flex: 2.7325 1 0;
+  }
+}
+/* #endregion */
+
+/* #region ————————————————————————————— Styles ————————————————————————————— */
+#flt-sel {
+  background-color: var(--clr-widget-bkg);
+  box-shadow: 0 0 1px 1px var(--clr-widget-bkg);
+
+  padding: var(--size-one-third);
+  border: 1px solid var(--clr-widget-brd);
+  border-radius: var(--size-seven-tenths);
+
+  gap: var(--size-one-half);
+}
+
+#flt-sel .grp {
+  gap: var(--size-one-half);
+  /* TODO: Fix border appearance below */
+  border-bottom: var(--brd-grp);
+}
+
+#flt-sel label {
+  background-color: var(--clr-lbl-bkg);
+  color: var(--clr-lbl-txt);
+
+  border-radius: var(--size-one-half);
+  padding: var(--size-one-half) var(--size-one);
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: all 0.15s ease-in-out;
+}
+
+#flt-sel label:has(input:checked) {
+  background-color: var(--clr-lbl-sel-bkg);
+  color: var(--clr-lbl-sel-txt);
+  font-weight: bold;
+}
+
+#flt-sel label:has(input[type="radio"]:disabled) {
+  opacity: 0.655;
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  #flt-sel .grp {
+    /* TODO: Fix border appearance below */
+    border-bottom: none;
+    border-right: var(--brd-grp);
+  }
+}
+/* #endregion */

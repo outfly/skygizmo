@@ -5,5 +5,11 @@ import loadComponent from "../../jsglobal/load-component.js";
 loadHdrFtr();
 
 // Load page main components
-// TODO: can use a for loop if more than one component exists, see fdock.js
-loadComponent("repl", "components/fcalctbl/fcalctbl.html");
+const components = {
+  "flt-sel": "components/flt-sel/flt-sel.html",
+  "repl": "components/fcalctbl/fcalctbl.html",
+};
+
+for (const [targetId, componentPath] of Object.entries(components)) {
+  loadComponent(targetId, componentPath);
+}

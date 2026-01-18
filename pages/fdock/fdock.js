@@ -6,6 +6,7 @@ loadHdrFtr();
 
 // Load page main components
 const components = {
+  "flt-sel": "components/flt-sel/flt-sel.html",
   perf: "components/perfcalc/perfcalc.html",
   "wgt-tbl": "components/wgt-tbl/wgt-tbl.html",
   dkt: "components/docket/docket.html",
